@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>莫斯密码转换器</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="morse-background"></div>
+    <div class="container">
+        <div class="title-section">
+            <div class="morse-decoration left">• • • — — — • • •</div>
+            <h1>莫斯密码转换器</h1>
+            <div class="morse-decoration right">• • • — — — • • •</div>
+        </div>
+        <div class="input-group">
+            <div class="label-wrapper">
+                <label for="input">输入文本</label>
+                <div class="morse-label">INPUT</div>
+            </div>
+            <textarea id="input" placeholder="在这里输入文本或莫斯密码..."></textarea>
+        </div>
+        
+        <div class="convert-buttons">
+            <button id="convertButton" class="glow-button" title="文本转莫斯密码">
+                <i class="fas fa-arrow-down"></i>
+                <span>文本 → 莫斯密码</span>
+            </button>
+            <button id="reverseButton" class="glow-button" title="莫斯密码转文本">
+                <i class="fas fa-arrow-up"></i>
+                <span>莫斯密码 → 文本</span>
+            </button>
+        </div>
+
+        <div class="input-group">
+            <div class="label-wrapper">
+                <label for="output">转换结果</label>
+                <div class="morse-label">OUTPUT</div>
+            </div>
+            <textarea id="output" readonly></textarea>
+            <div class="output-buttons">
+                <button id="copyButton" class="icon-button" disabled title="复制结果">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <button id="readButton" class="icon-button" disabled title="播放/朗读">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="downloadButton" class="icon-button" disabled title="下载音频">
+                    <i class="fas fa-download"></i>
+                </button>
+            </div>
+            <div class="progress-container">
+                <div class="progress-status">准备就绪</div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-text">0%</div>
+            </div>
+        </div>
+    </div>
+    <div class="morse-footer">
+        <div class="morse-code">.-.. --- ...- . / -.-. --- -.. .</div>
+    </div>
+
+    <script src="scripts/pinyin_data.js"></script>
+    <script src="scripts/audio.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
